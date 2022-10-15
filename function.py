@@ -2,14 +2,14 @@
 from re import S
 
 
-def tambah_Angka(*args:int) -> int:
+def tambah_Angka(end) -> int:
     hasil = 0
-    for angka in args:
+    for angka in range(1,end+1):
         hasil += angka
     
     print(hasil)
 
-tambah_Angka(2,1,3,4,10)
+tambah_Angka(20)
 print("\n")
 def fizz_buzz(jumlah:int)->None:
     for number in range(1,jumlah + 1):
