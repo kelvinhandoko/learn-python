@@ -52,6 +52,7 @@ def encrypt(word, shift):
 
 
 def decrypt(word, shift):
+    """masukan kata dan akan dishift sesuai dengan keinginan kita"""
     new_alphabet = alphabet[shift:] + alphabet[:shift]
     decrypted_word = ""
     for i in word:

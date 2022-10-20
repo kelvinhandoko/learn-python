@@ -1,10 +1,6 @@
 # dictionary (dict) => associative array => seperti object di JS.
-print('==== DICTIONARY ==== \n')
-biodata = {
-    "nama":"kelvin",
-    "umur":20,
-    "semester":1
-}
+print("==== DICTIONARY ==== \n")
+biodata = {"nama": "kelvin", "umur": 20, "semester": 1}
 print(biodata["nama"])
 print(biodata["umur"])
 print(biodata["semester"])
@@ -31,21 +27,22 @@ print(f"{KEY} {hasil} di biodata")
 
 # get value
 print("\nGETTING VALUE")
-hasil = biodata.get("nama","maaf anda kurang beruntung.")
+hasil = biodata.get("nama", "maaf anda kurang beruntung.")
 print(f"nama di biodata adalah {hasil}")
 
 # update
 print("\nupdate")
-biodata.update({"prodi":"teknologi informasi"})
+biodata.update({"prodi": "teknologi informasi"})
+biodata.update({"umur": 30})
 print(biodata)
 
 # delete
 print("\ndelete")
 del biodata["umur"]
-print(biodata,"\n")
+print(biodata, "\n")
 
 # looping pada dictionary
-print(" LOOPING PD DICT ".center(30,"="))
+print(" LOOPING PD DICT ".center(30, "="))
 
 # untuk mendapat keys
 print("\nuntuk mendapat key")
@@ -59,6 +56,5 @@ for item in biodata.values():
 
 # untuk mendapat key dan value
 print("\nuntuk mendapat key dan value")
-for key,value in biodata.items():
+for key, value in biodata.items():
     print(f"{key} : {value}")
-
