@@ -65,7 +65,7 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 
 # Eazy Level - Order not randomised:
 # e.g. 4 letter, 2 symbol, 2 number = JduE&!91
-def createPassword(huruf: int, simbol: int, angka: int):
+def createPassword(huruf: int, simbol: int, angka: int) -> str:
     letter = ""
     symbol = ""
     number = ""
