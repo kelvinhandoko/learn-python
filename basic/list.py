@@ -74,3 +74,4 @@ for i in data:
 
 # metode 2
 [print(f"\ndata ke {index} : {i}") for index, i in enumerate(data)]
+

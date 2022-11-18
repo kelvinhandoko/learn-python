@@ -1,5 +1,4 @@
 # fungsi
-from re import S
 
 
 def tambah_Angka(end) -> int:
