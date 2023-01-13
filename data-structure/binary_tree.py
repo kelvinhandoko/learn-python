@@ -8,7 +8,17 @@ class Node:
         self.val = val
 
     def printTree(self):
-        pass
+        queue = [self]
+        new = []
+        while len(queue) > 0:
+            cur = queue.pop()
+            new.append(cur.val)
+            if cur.left:
+                queue.insert(0, cur.left)
+            if cur.right:
+                queue.insert(0, cur.right)
+        print(new)
+        tingkatan = math.ceil(math.log2(len(new))) + 1
 
     def depth_first_values(self):
         stack = [self]
@@ -25,10 +35,10 @@ class Node:
         while len(queue) > 0:
             cur = queue.pop()
             print(cur.val)
-            if cur.left:
-                queue.insert(0, cur.left)
             if cur.right:
                 queue.insert(0, cur.right)
+            if cur.left:
+                queue.insert(0, cur.left)
 
     def tree_includes(self, target):
         stack = [self]
@@ -77,25 +87,60 @@ def max_path_sum(root):
     return root.val + max_child
 
 
-a = Node(10)
-b = Node(20)
-c = Node(32)
-d = Node(100)
-e = Node(70)
-f = Node(123)
-g = Node(1200)
+def in_order_transversal(root):
+    if root:
+        in_order_transversal(root.left)
+        print(root.val, end=",")
+        in_order_transversal(root.right)
 
+
+def pre_order_transversal(root):
+    if root:
+        print(root.val, end=",")
+        in_order_transversal(root.left)
+        in_order_transversal(root.right)
+
+
+def post_order_transversal(root):
+    if root:
+        post_order_transversal(root.left)
+        post_order_transversal(root.right)
+        print(root.val, end=",")
+
+
+a = Node(2)
+b = Node(7)
+c = Node(5)
+d = Node(2)
+e = Node(6)
+f = Node(9)
+g = Node(5)
+h = Node(11)
+i = Node(4)
 a.left = b
 a.right = c
+c.right = f
+f.left = i
 b.left = d
 b.right = e
-c.right = g
-
-print("depth first transversal\n")
-a.depth_first_values()
+e.left = g
+e.right = h
+# c.right = g
+# d.left = h
+# d.right = i
+# e.left = j
+# print("depth first transversal\n")
+# # a.depth_first_values()
 print("\nbreath first transversal\n")
 a.breadth_first_values()
-print(a.tree_includes("b"))
-a.tree_sum()
-print(a.tree_min_value())
-print(max_path_sum(a))
+# # print(a.tree_includes("b"))
+# # a.tree_sum()
+# # print(a.tree_min_value())
+# # print(max_path_sum(a))
+# a.printTree()
+print("in-order")
+in_order_transversal(a)
+print("pre-order")
+pre_order_transversal(a)
+print("post-order")
+post_order_transversal(a)
