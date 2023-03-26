@@ -56,8 +56,12 @@ def decrypt(word, shift):
     new_alphabet = alphabet[shift:] + alphabet[:shift]
     decrypted_word = ""
     for i in word:
-        index = new_alphabet.index(i)
-        decrypted_word += alphabet[index]
+        if i == " ":
+            new_letter = " "
+        else:
+            index = new_alphabet.index(i)
+            new_letter = alphabet[index]
+        decrypted_word += new_letter
     return decrypted_word
 
 

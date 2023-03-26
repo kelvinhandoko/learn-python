@@ -1,8 +1,9 @@
 # untuk membuka file kita bisa menggunakan open.
-file = open("./basic/file.txt")
+file = open("../algorithm/file.txt")
 # untuk membaca isi file kita menggunakan read
 content = file.read()
 file.close()
+
 
 # untuk mempermudah dalam pembukaan file, kita bisa menggunakan keyword with
 
